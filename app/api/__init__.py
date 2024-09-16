@@ -13,9 +13,9 @@ def create_app(config_name):
     Migrate(app, db)
 
     # Register Blueprints (APIs)
-    from .api.users import users_blueprint
-    from .api.posts import posts_blueprint
-    app.register_blueprint(users_blueprint, url_prefix='/api/v1/users')
-    app.register_blueprint(posts_blueprint, url_prefix='/api/v1/posts')
+    from .api.recipes import recipes_blueprint
+    from .api.impages import images_blueprint
+    app.register_blueprint(recipes_blueprint, url_prefix='/api/v1/recipe')
+    app.register_blueprint(images_blueprint, url_prefix='/api/v1/images')
 
     return app

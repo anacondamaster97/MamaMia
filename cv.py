@@ -7,7 +7,7 @@ from groq import Groq
 from dotenv import load_dotenv  
 
 def get_dishes(ingredients):
-    prompt = "Given the following list of ingredients, provide three dishes I can make using these ingredients. For each dish, include the history of the dish and a description of how to prepare it. Return the response only in the following JSON format without any extra text or explanations: {'data': [{'dish1': 'history of the dish and how to make the dish'},{'dish2': 'history of the dish and how to make the dish'},{'dish3': 'history of the dish and how to make the dish'}]} Here are the ingredients: " + str(ingredients)
+    prompt = "Given the following list of ingredients, provide three dishes I can make using these ingredients. For each dish, include the history of the dish and a description of how to prepare it. Return the response only in the following JSON format without any extra text or explanations: {'data': [{'Name of dish1': 'history of the dish and how to make the dish'},{'Name of dish2': 'history of the dish and how to make the dish'},{'Name of dish3': 'history of the dish and how to make the dish'}]} Here are the ingredients: " + str(ingredients)
     load_dotenv() 
     print("KEY", os.getenv("GROQ_KEY"))
     client = Groq(
